@@ -15,11 +15,11 @@ const Reservation = () => {
     const [phone, setPhone] = useState(0)
     const navigate = useNavigate();
 
-    const handleReservation = async ()=>{
+    const handleReservation = async (e)=>{
         e.preventDefault();
         try {
             const { data } = await axios.post("http://localhost:4000/api/v1/reservation/send",
-            { firstName, lastName, email, phone, time },
+            { firstName, lastName, email, phone, time, date },
         {
             headers:{
                 "content-type": "application/json"
