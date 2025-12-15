@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-scroll'
 import { data } from '../restApi.json'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
 const Navbar = () => {
     const [show, setShow] = useState(false)
@@ -24,7 +25,11 @@ const Navbar = () => {
                     })
                 }
             </div>
+            <button className='menuBtn'>Our Menu</button>
         </div>
+        <div className='hamburger' onClick={() => {
+            setShow(!show)
+        }}><GiHamburgerMenu /></div>
     </nav>
   )
 }
